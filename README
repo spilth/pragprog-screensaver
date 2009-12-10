@@ -1,0 +1,6 @@
+This goal of this project is to create screensavers that rotate through programmer tips provided by variou Pragmatic Bookshelf books such as The Pragmatic Programmer and Practices of an Agile Programmer.
+
+pragtips - This is a Rails application that's used to collection tips and generate
+
+screensaver - a folder to store various screensaver implementations
+	quartz-composer - a Mac Quartz Composer implementation of the screensaver
