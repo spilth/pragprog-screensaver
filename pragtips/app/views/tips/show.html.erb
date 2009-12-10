@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @tip.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @tip.description %>
+</p>
+
+<p>
+  <b>Book:</b>
+  <%=h @tip.book %>
+</p>
+
+
+<%= link_to 'Edit', edit_tip_path(@tip) %> |
+<%= link_to 'Back', tips_path %>

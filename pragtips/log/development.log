@@ -1,0 +1,2057 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTips (20091124141636)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "tips" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "book" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091124141636')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tips")[0m
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:17:25) [GET]
+  [4;36;1mTip Load (0.4ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 46ms (View: 42, DB: 0) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:17:27) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:18:01) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Care About Your Craft", "description"=>"Why spend your life developing software unless you care about doing it well?", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.7ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:18:01', 'Care About Your Craft', 'Why spend your life developing software unless you care about doing it well?', 'The Pragmatic Programmer', '2009-11-24 14:18:01')[0m
+Redirected to http://localhost:3000/tips/1
+Completed in 64ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:18:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 1) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/tips/1]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:18:04) [GET]
+  [4;35;1mTip Load (0.4ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:18:05) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:18:32) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Think! About Your Work", "description"=>"Turn off the autopilot and take control. Constantly critique and appraise your work.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:18:32', 'Think! About Your Work', 'Turn off the autopilot and take control. Constantly critique and appraise your work.', 'The Pragmatic Programmer', '2009-11-24 14:18:32')[0m
+Redirected to http://localhost:3000/tips/2
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:18:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 2) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/2]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:18:35) [GET]
+  [4;36;1mTip Load (0.5ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:18:37) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:19:32) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Provide Options, Don't Make Lame Excuses", "description"=>"Instead of excuses, provide options. Don't say it can't be done; explain what CAN be done.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:19:32', 'Provide Options, Don''t Make Lame Excuses', 'Instead of excuses, provide options. Don''t say it can''t be done; explain what CAN be done.', 'The Pragmatic Programmer', '2009-11-24 14:19:32')[0m
+Redirected to http://localhost:3000/tips/3
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:19:33) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 3) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/3]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:19:53) [GET]
+  [4;35;1mTip Load (1.0ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:19:55) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:20:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Don't Live with Broken Windows", "description"=>"Fix bad design, wrong decisions, and poor code when you see them.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:20:21', 'Don''t Live with Broken Windows', 'Fix bad design, wrong decisions, and poor code when you see them.', 'The Pragmatic Programmer', '2009-11-24 14:20:21')[0m
+Redirected to http://localhost:3000/tips/4
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:20:21) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 4) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/4]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:20:25) [GET]
+  [4;36;1mTip Load (0.6ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#index to xml (for 127.0.0.1 at 2009-11-24 09:20:29) [GET]
+  [4;35;1mTip Load (0.6ms)[0m   [0mSELECT * FROM "tips" [0m
+Completed in 169ms (View: 164, DB: 1) | 200 OK [http://localhost/tips.xml]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:22:33) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:23:05) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Be a Catalyst for Change", "description"=>"You can't force change on people. Instead, show them how the future might be and help them participate in creating it.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:23:05', 'Be a Catalyst for Change', 'You can''t force change on people. Instead, show them how the future might be and help them participate in creating it.', 'The Pragmatic Programmer', '2009-11-24 14:23:05')[0m
+Redirected to http://localhost:3000/tips/5
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:23:05) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 5) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/5]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:23:07) [GET]
+  [4;36;1mTip Load (0.7ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:23:09) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:23:33) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Remember the Big Picture", "description"=>"Don't get so engrossed in the details that you forget to check what's happening around you.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:23:33', 'Remember the Big Picture', 'Don''t get so engrossed in the details that you forget to check what''s happening around you.', 'The Pragmatic Programmer', '2009-11-24 14:23:33')[0m
+Redirected to http://localhost:3000/tips/6
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:23:33) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 6) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/6]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:23:35) [GET]
+  [4;35;1mTip Load (0.7ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:23:36) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:23:58) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Make Quality a Requirements Issue", "description"=>"Involve your users in determining the project's real quality requirements.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:23:58', 'Make Quality a Requirements Issue', 'Involve your users in determining the project''s real quality requirements.', 'The Pragmatic Programmer', '2009-11-24 14:23:58')[0m
+Redirected to http://localhost:3000/tips/7
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:23:58) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 7) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/7]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:24:02) [GET]
+  [4;36;1mTip Load (0.8ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:24:04) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:24:26) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Invest Regularly in Your Knowledge Portfolio", "description"=>"Make learning a habit.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:24:26', 'Invest Regularly in Your Knowledge Portfolio', 'Make learning a habit.', 'The Pragmatic Programmer', '2009-11-24 14:24:26')[0m
+Redirected to http://localhost:3000/tips/8
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:24:26) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 8) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/8]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:24:28) [GET]
+  [4;35;1mTip Load (0.8ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:24:30) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:25:00) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Critically Analyze What You Read and Hear", "description"=>"Don't be swayed by vendors, media hype, or dogma. Analyze information in terms of you and your project.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:25:00', 'Critically Analyze What You Read and Hear', 'Don''t be swayed by vendors, media hype, or dogma. Analyze information in terms of you and your project.', 'The Pragmatic Programmer', '2009-11-24 14:25:00')[0m
+Redirected to http://localhost:3000/tips/9
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:25:00) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 9) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/9]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:25:02) [GET]
+  [4;36;1mTip Load (0.9ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:25:04) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:25:34) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"It's Both What You Say and the Way You Say It", "description"=>"There's no point in having great ideas if you don't communicate them effectively.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:25:34', 'It''s Both What You Say and the Way You Say It', 'There''s no point in having great ideas if you don''t communicate them effectively.', 'The Pragmatic Programmer', '2009-11-24 14:25:34')[0m
+Redirected to http://localhost:3000/tips/10
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:25:34) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 10) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/10]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:25:36) [GET]
+  [4;35;1mTip Load (1.0ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:25:40) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:26:05) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"DRY - Don't Repeat Yourself", "description"=>"Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:26:05', 'DRY - Don''t Repeat Yourself', 'Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.', 'The Pragmatic Programmer', '2009-11-24 14:26:05')[0m
+Redirected to http://localhost:3000/tips/11
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:26:05) [GET]
+  Parameters: {"id"=>"11"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 11) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/11]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:26:07) [GET]
+  [4;36;1mTip Load (1.0ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:26:10) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:26:32) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Make It Easy to Reuse", "description"=>"If it's easy to reuse, people will. Create an environment that supports reuse.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:26:32', 'Make It Easy to Reuse', 'If it''s easy to reuse, people will. Create an environment that supports reuse.', 'The Pragmatic Programmer', '2009-11-24 14:26:32')[0m
+Redirected to http://localhost:3000/tips/12
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:26:32) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 12) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/12]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:26:33) [GET]
+  [4;35;1mTip Load (1.2ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:26:36) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:27:16) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Eliminate Effects Between Unrelated Things", "description"=>"Design components that are self-contained, independent, and have a single, well-defined purpose.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:27:16', 'Eliminate Effects Between Unrelated Things', 'Design components that are self-contained, independent, and have a single, well-defined purpose.', 'The Pragmatic Programmer', '2009-11-24 14:27:16')[0m
+Redirected to http://localhost:3000/tips/13
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:27:16) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 13) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/13]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:27:18) [GET]
+  [4;36;1mTip Load (1.1ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:27:21) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:27:50) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"There Are No Final Decisions", "description"=>"No decision is cast in stone. Instead, consider each as being written in the sand at the beach, and plan for change.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:27:50', 'There Are No Final Decisions', 'No decision is cast in stone. Instead, consider each as being written in the sand at the beach, and plan for change.', 'The Pragmatic Programmer', '2009-11-24 14:27:50')[0m
+Redirected to http://localhost:3000/tips/14
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:27:50) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 14) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/14]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:27:53) [GET]
+  [4;35;1mTip Load (1.2ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:27:55) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:28:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Use Tracer Bullets to Find the Target", "description"=>"Tracer bullets let you home in on your target by trying things and seeing how close they land.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:28:21', 'Use Tracer Bullets to Find the Target', 'Tracer bullets let you home in on your target by trying things and seeing how close they land.', 'The Pragmatic Programmer', '2009-11-24 14:28:21')[0m
+Redirected to http://localhost:3000/tips/15
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:28:21) [GET]
+  Parameters: {"id"=>"15"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 15) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/15]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:28:23) [GET]
+  [4;36;1mTip Load (1.2ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 78ms (View: 73, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:28:26) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:28:54) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Prototype to Learn", "description"=>"Prototyping is a learning experience. Its value lies not in the code you produce, but in the lessons you learn.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:28:54', 'Prototype to Learn', 'Prototyping is a learning experience. Its value lies not in the code you produce, but in the lessons you learn.', 'The Pragmatic Programmer', '2009-11-24 14:28:54')[0m
+Redirected to http://localhost:3000/tips/16
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:28:54) [GET]
+  Parameters: {"id"=>"16"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 16) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/16]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:28:56) [GET]
+  [4;35;1mTip Load (1.3ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:28:59) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:29:22) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Program Close to the Problem Domain", "description"=>"Design and code in your user's language.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:29:22', 'Program Close to the Problem Domain', 'Design and code in your user''s language.', 'The Pragmatic Programmer', '2009-11-24 14:29:22')[0m
+Redirected to http://localhost:3000/tips/17
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:29:22) [GET]
+  Parameters: {"id"=>"17"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 17) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/17]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:29:24) [GET]
+  [4;36;1mTip Load (1.4ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:29:28) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:29:52) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Estimate to Avoid Surprises", "description"=>"Estimate before you start. You'll spot potential problems up front.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:29:52', 'Estimate to Avoid Surprises', 'Estimate before you start. You''ll spot potential problems up front.', 'The Pragmatic Programmer', '2009-11-24 14:29:52')[0m
+Redirected to http://localhost:3000/tips/18
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:29:52) [GET]
+  Parameters: {"id"=>"18"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 18) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/18]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:29:54) [GET]
+  [4;35;1mTip Load (1.5ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:29:57) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 69ms (View: 65, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:30:24) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Iterate the Schedule with the Code", "description"=>"Use experience you gain as you implement to refine the project time scales.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:30:24', 'Iterate the Schedule with the Code', 'Use experience you gain as you implement to refine the project time scales.', 'The Pragmatic Programmer', '2009-11-24 14:30:24')[0m
+Redirected to http://localhost:3000/tips/19
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:30:24) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 19) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/19]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:30:26) [GET]
+  [4;36;1mTip Load (1.5ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:30:28) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:30:58) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Keep Knowledge in Plain Text", "description"=>"Plain text won't become obsolete. It helps leverage your work and simplifies debugging and testing.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:30:58', 'Keep Knowledge in Plain Text', 'Plain text won''t become obsolete. It helps leverage your work and simplifies debugging and testing.', 'The Pragmatic Programmer', '2009-11-24 14:30:58')[0m
+Redirected to http://localhost:3000/tips/20
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:30:58) [GET]
+  Parameters: {"id"=>"20"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 20) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/20]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:31:02) [GET]
+  [4;35;1mTip Load (1.5ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 20ms (View: 14, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:31:05) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:31:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Use the Power of Command Shells", "description"=>"Use the shell when graphical user interfaces don't cut it.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.6ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:31:25', 'Use the Power of Command Shells', 'Use the shell when graphical user interfaces don''t cut it.', 'The Pragmatic Programmer', '2009-11-24 14:31:25')[0m
+Redirected to http://localhost:3000/tips/21
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:31:25) [GET]
+  Parameters: {"id"=>"21"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 21) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/21]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:31:27) [GET]
+  [4;36;1mTip Load (1.6ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 20ms (View: 14, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:31:31) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:31:57) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Use a Single Editor Well", "description"=>"The editor should be an extension of your hand; make sure your editor is configurable, extensible, and programmable.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:31:57', 'Use a Single Editor Well', 'The editor should be an extension of your hand; make sure your editor is configurable, extensible, and programmable.', 'The Pragmatic Programmer', '2009-11-24 14:31:57')[0m
+Redirected to http://localhost:3000/tips/22
+Completed in 73ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:31:57) [GET]
+  Parameters: {"id"=>"22"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 22) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/22]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:31:59) [GET]
+  [4;35;1mTip Load (1.7ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 21ms (View: 15, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:32:01) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:32:50) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Refactor Early, Refactor Often", "description"=>"Just as you might weed and rearrange a garden, rewrite, rework, and re-architect code when it needs it. Fix the root of the problem.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:32:50', 'Refactor Early, Refactor Often', 'Just as you might weed and rearrange a garden, rewrite, rework, and re-architect code when it needs it. Fix the root of the problem.', 'The Pragmatic Programmer', '2009-11-24 14:32:50')[0m
+Redirected to http://localhost:3000/tips/23
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:32:50) [GET]
+  Parameters: {"id"=>"23"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 23) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/23]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:32:52) [GET]
+  [4;36;1mTip Load (1.7ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 21ms (View: 15, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:32:56) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:33:09) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Design to Test", "description"=>"Start thinking about testing before you write a line of code.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:33:09', 'Design to Test', 'Start thinking about testing before you write a line of code.', 'The Pragmatic Programmer', '2009-11-24 14:33:09')[0m
+Redirected to http://localhost:3000/tips/24
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:33:09) [GET]
+  Parameters: {"id"=>"24"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 24) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/24]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:33:11) [GET]
+  [4;35;1mTip Load (1.7ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 22ms (View: 16, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:33:13) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:33:35) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Test Your Software, or Your Users Will", "description"=>"Test ruthlessly. Don't make your users find bugs for you.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:33:35', 'Test Your Software, or Your Users Will', 'Test ruthlessly. Don''t make your users find bugs for you.', 'The Pragmatic Programmer', '2009-11-24 14:33:35')[0m
+Redirected to http://localhost:3000/tips/25
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:33:35) [GET]
+  Parameters: {"id"=>"25"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 25) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/25]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:33:36) [GET]
+  [4;36;1mTip Load (1.8ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 23ms (View: 17, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:33:39) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:34:14) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Don't Use Wizard Code You Don't Understand", "description"=>"Wizard can generate reams of code. Make sure you understand ALL of it before you incorporate it into your project.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:34:14', 'Don''t Use Wizard Code You Don''t Understand', 'Wizard can generate reams of code. Make sure you understand ALL of it before you incorporate it into your project.', 'The Pragmatic Programmer', '2009-11-24 14:34:14')[0m
+Redirected to http://localhost:3000/tips/26
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:34:14) [GET]
+  Parameters: {"id"=>"26"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 26) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/26]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:34:15) [GET]
+  [4;35;1mTip Load (1.9ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 23ms (View: 17, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:34:18) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:34:55) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Don't Gather Requirements - Dig for Them", "description"=>"Requirements rarely lie on the surface. They're buried deep beneath layers of assumptions, misconceptions, and politics.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:34:55', 'Don''t Gather Requirements - Dig for Them', 'Requirements rarely lie on the surface. They''re buried deep beneath layers of assumptions, misconceptions, and politics.', 'The Pragmatic Programmer', '2009-11-24 14:34:55')[0m
+Redirected to http://localhost:3000/tips/27
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:34:55) [GET]
+  Parameters: {"id"=>"27"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 27) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/27]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:34:57) [GET]
+  [4;36;1mTip Load (2.0ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 24ms (View: 18, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:35:00) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:35:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Work with a User to Think Like a User", "description"=>"It's the best way to gain insight into how the system will REALLY be used.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.6ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:35:25', 'Work with a User to Think Like a User', 'It''s the best way to gain insight into how the system will REALLY be used.', 'The Pragmatic Programmer', '2009-11-24 14:35:25')[0m
+Redirected to http://localhost:3000/tips/28
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:35:25) [GET]
+  Parameters: {"id"=>"28"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 28) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/28]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:35:27) [GET]
+  [4;35;1mTip Load (2.0ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 25ms (View: 19, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:35:29) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:36:09) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Abstractions Live Longer than Details", "description"=>"Invest in the abstraction, not the implementation. Abstractions can survive the barrage of changes from different implementations and new technologies.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:36:09', 'Abstractions Live Longer than Details', 'Invest in the abstraction, not the implementation. Abstractions can survive the barrage of changes from different implementations and new technologies.', 'The Pragmatic Programmer', '2009-11-24 14:36:09')[0m
+Redirected to http://localhost:3000/tips/29
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:36:09) [GET]
+  Parameters: {"id"=>"29"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 29) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/29]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:36:40) [GET]
+  [4;36;1mTip Load (2.6ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 26ms (View: 19, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:36:44) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:37:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"User a Project Glossary", "description"=>"Create and maintain a single source of all the specific terms and vocabulary for a project.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:37:21', 'User a Project Glossary', 'Create and maintain a single source of all the specific terms and vocabulary for a project.', 'The Pragmatic Programmer', '2009-11-24 14:37:21')[0m
+Redirected to http://localhost:3000/tips/30
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:37:21) [GET]
+  Parameters: {"id"=>"30"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 30) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/30]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:37:22) [GET]
+  [4;35;1mTip Load (2.1ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 26ms (View: 19, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:37:25) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:38:09) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Don't Think Outside the Box - FIND the Box", "description"=>"When faced with an impossible problem, identify the REAL constraints. Ask yourself: \"Does it have to be done this way? Does it have to be done at all?\"", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:38:09', 'Don''t Think Outside the Box - FIND the Box', 'When faced with an impossible problem, identify the REAL constraints. Ask yourself: "Does it have to be done this way? Does it have to be done at all?"', 'The Pragmatic Programmer', '2009-11-24 14:38:09')[0m
+Redirected to http://localhost:3000/tips/31
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:38:09) [GET]
+  Parameters: {"id"=>"31"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 31) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/31]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:38:12) [GET]
+  [4;36;1mTip Load (2.2ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 27ms (View: 21, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:38:14) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:38:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Start When You're Ready", "description"=>"You've been building experience all your life. Don't ignore niggling doubts.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:38:39', 'Start When You''re Ready', 'You''ve been building experience all your life. Don''t ignore niggling doubts.', 'The Pragmatic Programmer', '2009-11-24 14:38:39')[0m
+Redirected to http://localhost:3000/tips/32
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:38:40) [GET]
+  Parameters: {"id"=>"32"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 32) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/32]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:38:42) [GET]
+  [4;35;1mTip Load (2.3ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 27ms (View: 20, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:38:46) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:39:14) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Some Things Are Better Done than Described", "description"=>"Don't fall into the specification spiral - at some point you need to start coding.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:39:14', 'Some Things Are Better Done than Described', 'Don''t fall into the specification spiral - at some point you need to start coding.', 'The Pragmatic Programmer', '2009-11-24 14:39:14')[0m
+Redirected to http://localhost:3000/tips/33
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:39:14) [GET]
+  Parameters: {"id"=>"33"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 33) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/33]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:39:16) [GET]
+  [4;36;1mTip Load (2.4ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 28ms (View: 21, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:39:19) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:39:47) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Don't Be a Slave to Formal Methods", "description"=>"Don't blindly adopt any technique without putting it into the context of your development practices and capabilities.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:39:47', 'Don''t Be a Slave to Formal Methods', 'Don''t blindly adopt any technique without putting it into the context of your development practices and capabilities.', 'The Pragmatic Programmer', '2009-11-24 14:39:47')[0m
+Redirected to http://localhost:3000/tips/34
+Completed in 76ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:39:47) [GET]
+  Parameters: {"id"=>"34"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 34) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/34]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:39:49) [GET]
+  [4;35;1mTip Load (2.6ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 29ms (View: 22, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:39:52) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:40:19) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Costly Tools Don't Produce Better Designs", "description"=>"Beware of vendor hype, industry dogma, and the aura of the price tag. Judge tools on their merits.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:40:19', 'Costly Tools Don''t Produce Better Designs', 'Beware of vendor hype, industry dogma, and the aura of the price tag. Judge tools on their merits.', 'The Pragmatic Programmer', '2009-11-24 14:40:19')[0m
+Redirected to http://localhost:3000/tips/35
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:40:19) [GET]
+  Parameters: {"id"=>"35"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 35) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/35]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:40:21) [GET]
+  [4;36;1mTip Load (2.5ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 29ms (View: 22, DB: 2) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:40:24) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:40:57) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Organize Teams Around Functionality", "description"=>"Don't separate designers from coders, testers from data modelers. Build teams the way you build code.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:40:57', 'Organize Teams Around Functionality', 'Don''t separate designers from coders, testers from data modelers. Build teams the way you build code.', 'The Pragmatic Programmer', '2009-11-24 14:40:57')[0m
+Redirected to http://localhost:3000/tips/36
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:40:57) [GET]
+  Parameters: {"id"=>"36"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 36) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/36]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:41:20) [GET]
+  [4;35;1mTip Load (2.6ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 31ms (View: 22, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:41:24) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 70ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:41:52) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Don't Use Manual Procedures", "description"=>"A shell script or batch file will execute the same instructions, in the same order, time after time.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:41:52', 'Don''t Use Manual Procedures', 'A shell script or batch file will execute the same instructions, in the same order, time after time.', 'The Pragmatic Programmer', '2009-11-24 14:41:52')[0m
+Redirected to http://localhost:3000/tips/37
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:41:52) [GET]
+  Parameters: {"id"=>"37"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 37) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/37]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:41:54) [GET]
+  [4;36;1mTip Load (2.6ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 31ms (View: 24, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:41:56) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:42:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Test Early, Test Often, Test Automatically", "description"=>"Test that run with every build are much more effective than test plans that sit on a shelf.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:42:21', 'Test Early, Test Often, Test Automatically', 'Test that run with every build are much more effective than test plans that sit on a shelf.', 'The Pragmatic Programmer', '2009-11-24 14:42:21')[0m
+Redirected to http://localhost:3000/tips/38
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:42:21) [GET]
+  Parameters: {"id"=>"38"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 38) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/38]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:42:24) [GET]
+  [4;35;1mTip Load (2.6ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 31ms (View: 24, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:42:27) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:42:44) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Coding Ain't Done 'Til All the Tests Run", "description"=>"'Nuff said.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:42:44', 'Coding Ain''t Done ''Til All the Tests Run', '''Nuff said.', 'The Pragmatic Programmer', '2009-11-24 14:42:44')[0m
+Redirected to http://localhost:3000/tips/39
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:42:44) [GET]
+  Parameters: {"id"=>"39"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 39) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/39]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:42:46) [GET]
+  [4;36;1mTip Load (2.7ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 94ms (View: 87, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:42:48) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:43:18) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Use Saboteurs to Test Your Testing", "description"=>"Introduce bugs on purpose in a separate copy of the source to verify that testing will catch them.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:43:18', 'Use Saboteurs to Test Your Testing', 'Introduce bugs on purpose in a separate copy of the source to verify that testing will catch them.', 'The Pragmatic Programmer', '2009-11-24 14:43:18')[0m
+Redirected to http://localhost:3000/tips/40
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:43:18) [GET]
+  Parameters: {"id"=>"40"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 40) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/40]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:43:20) [GET]
+  [4;35;1mTip Load (2.6ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 32ms (View: 25, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:43:22) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:43:48) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Test State Coverage, Not Code Coverage", "description"=>"Identify and test significant program states. Just testing lines of code isn't enough.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:43:48', 'Test State Coverage, Not Code Coverage', 'Identify and test significant program states. Just testing lines of code isn''t enough.', 'The Pragmatic Programmer', '2009-11-24 14:43:48')[0m
+Redirected to http://localhost:3000/tips/41
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:43:48) [GET]
+  Parameters: {"id"=>"41"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 41) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/41]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:43:50) [GET]
+  [4;36;1mTip Load (2.8ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 33ms (View: 26, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:43:54) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:44:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Find Bugs Once", "description"=>"Once a human tester finds a bug, it should be the LAST time a human tester finds that bug. Automatic tests should check for it from then on.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:44:25', 'Find Bugs Once', 'Once a human tester finds a bug, it should be the LAST time a human tester finds that bug. Automatic tests should check for it from then on.', 'The Pragmatic Programmer', '2009-11-24 14:44:25')[0m
+Redirected to http://localhost:3000/tips/42
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:44:25) [GET]
+  Parameters: {"id"=>"42"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 42) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 69ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/42]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:44:27) [GET]
+  [4;35;1mTip Load (2.9ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 34ms (View: 26, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:44:29) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:45:02) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"English is Just a Programming Language", "description"=>"Write documents as you would write code: honor the DRY principle, use metadata, MVC, automatic generation, and so on.", "book"=>"The"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:45:02', 'English is Just a Programming Language', 'Write documents as you would write code: honor the DRY principle, use metadata, MVC, automatic generation, and so on.', 'The', '2009-11-24 14:45:02')[0m
+Redirected to http://localhost:3000/tips/43
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:45:02) [GET]
+  Parameters: {"id"=>"43"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 43) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/43]
+
+
+Processing TipsController#edit (for 127.0.0.1 at 2009-11-24 09:45:05) [GET]
+  Parameters: {"id"=>"43"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 43) [0m
+Rendering template within layouts/tips
+Rendering tips/edit
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/tips/43/edit]
+
+
+Processing TipsController#update (for 127.0.0.1 at 2009-11-24 09:45:10) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "id"=>"43", "tip"=>{"title"=>"English is Just a Programming Language", "description"=>"Write documents as you would write code: honor the DRY principle, use metadata, MVC, automatic generation, and so on.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 43) [0m
+  [4;36;1mTip Update (0.4ms)[0m   [0;1mUPDATE "tips" SET "book" = 'The Pragmatic Programmer', "updated_at" = '2009-11-24 14:45:10' WHERE "id" = 43[0m
+Redirected to http://localhost:3000/tips/43
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/tips/43]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:45:10) [GET]
+  Parameters: {"id"=>"43"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 43) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/43]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:45:15) [GET]
+  [4;36;1mTip Load (2.8ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 35ms (View: 27, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:45:19) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:45:44) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Build Documentation In, Don't Bolt It On", "description"=>"Documentation created separately from code is less likely to be correct and up to date.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:45:44', 'Build Documentation In, Don''t Bolt It On', 'Documentation created separately from code is less likely to be correct and up to date.', 'The Pragmatic Programmer', '2009-11-24 14:45:44')[0m
+Redirected to http://localhost:3000/tips/44
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:45:44) [GET]
+  Parameters: {"id"=>"44"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 44) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 69ms (View: 64, DB: 0) | 200 OK [http://localhost/tips/44]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:45:46) [GET]
+  [4;35;1mTip Load (3.0ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 36ms (View: 28, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:45:49) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:46:33) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Gently Exceed Your Users' Expectations", "description"=>"Come to understand your users' expectations, then deliver just that little bit more.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:46:33', 'Gently Exceed Your Users'' Expectations', 'Come to understand your users'' expectations, then deliver just that little bit more.', 'The Pragmatic Programmer', '2009-11-24 14:46:33')[0m
+Redirected to http://localhost:3000/tips/45
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:46:33) [GET]
+  Parameters: {"id"=>"45"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 45) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/45]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:46:35) [GET]
+  [4;36;1mTip Load (3.0ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 35ms (View: 27, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:46:38) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:46:58) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Sign Your Work", "description"=>"Craftsmen of an earlier age were proud to sign their work. You should be, too.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.6ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:46:58', 'Sign Your Work', 'Craftsmen of an earlier age were proud to sign their work. You should be, too.', 'The Pragmatic Programmer', '2009-11-24 14:46:58')[0m
+Redirected to http://localhost:3000/tips/46
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:46:58) [GET]
+  Parameters: {"id"=>"46"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 46) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/46]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:47:33) [GET]
+  [4;35;1mTip Load (3.1ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 37ms (View: 28, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:47:40) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:47:56) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Always Use Sorce Code Control", "description"=>"Source code control is a time machine for your work - you CAN go back.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:47:56', 'Always Use Sorce Code Control', 'Source code control is a time machine for your work - you CAN go back.', 'The Pragmatic Programmer', '2009-11-24 14:47:56')[0m
+Redirected to http://localhost:3000/tips/47
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:47:56) [GET]
+  Parameters: {"id"=>"47"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 47) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/47]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:47:58) [GET]
+  [4;36;1mTip Load (3.1ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 37ms (View: 29, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:48:01) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:48:33) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Fix the Problem, Not the Blame", "description"=>"It doesn't really matter whether the bug is your fault or someone else's - it is still your problem and it still needs to be fixed.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:48:33', 'Fix the Problem, Not the Blame', 'It doesn''t really matter whether the bug is your fault or someone else''s - it is still your problem and it still needs to be fixed.', 'The Pragmatic Programmer', '2009-11-24 14:48:33')[0m
+Redirected to http://localhost:3000/tips/48
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:48:33) [GET]
+  Parameters: {"id"=>"48"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 48) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/48]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:48:34) [GET]
+  [4;35;1mTip Load (5.1ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 43ms (View: 29, DB: 5) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:48:36) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:48:54) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Don't Panic When Debugging", "description"=>"Take a deep breath and THINK! about what could be causing the bug.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:48:54', 'Don''t Panic When Debugging', 'Take a deep breath and THINK! about what could be causing the bug.', 'The Pragmatic Programmer', '2009-11-24 14:48:54')[0m
+Redirected to http://localhost:3000/tips/49
+Completed in 13ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:48:54) [GET]
+  Parameters: {"id"=>"49"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 49) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/49]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:48:56) [GET]
+  [4;36;1mTip Load (3.3ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 100ms (View: 31, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:49:00) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:49:28) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"\"select\" Isn't Broken", "description"=>"It is rare to find a bug in the OS or the compiler, or even a third-party product or library. The bug is most likely in the application.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.7ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:49:28', '"select" Isn''t Broken', 'It is rare to find a bug in the OS or the compiler, or even a third-party product or library. The bug is most likely in the application.', 'The Pragmatic Programmer', '2009-11-24 14:49:28')[0m
+Redirected to http://localhost:3000/tips/50
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:49:28) [GET]
+  Parameters: {"id"=>"50"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 50) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/50]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:50:38) [GET]
+  [4;35;1mTip Load (3.4ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 40ms (View: 30, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:50:41) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:51:11) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Don't Assume It - Prove It", "description"=>"Prove your assumptions in the actual environment - with real data and boundary conditions.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:51:11', 'Don''t Assume It - Prove It', 'Prove your assumptions in the actual environment - with real data and boundary conditions.', 'The Pragmatic Programmer', '2009-11-24 14:51:11')[0m
+Redirected to http://localhost:3000/tips/51
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:51:11) [GET]
+  Parameters: {"id"=>"51"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 51) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/51]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:51:13) [GET]
+  [4;36;1mTip Load (3.3ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 39ms (View: 31, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:51:15) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 69ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:51:42) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Learn a Text Manipulation Language", "description"=>"You spend a large part of each day working with text. Why not have the computer do some of it for you?", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:51:42', 'Learn a Text Manipulation Language', 'You spend a large part of each day working with text. Why not have the computer do some of it for you?', 'The Pragmatic Programmer', '2009-11-24 14:51:42')[0m
+Redirected to http://localhost:3000/tips/52
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:51:42) [GET]
+  Parameters: {"id"=>"52"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 52) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/52]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 09:51:44) [GET]
+  [4;35;1mTip Load (3.4ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 40ms (View: 31, DB: 3) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 09:51:47) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 09:52:11) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"K/AcTPII1WVVC838aBx1Rn89w4iRp6528NP3O1s0WdY=", "tip"=>{"title"=>"Write Code That Writes Code", "description"=>"Code generators increase your productivity and help avoid duplication.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 14:52:11', 'Write Code That Writes Code', 'Code generators increase your productivity and help avoid duplication.', 'The Pragmatic Programmer', '2009-11-24 14:52:11')[0m
+Redirected to http://localhost:3000/tips/53
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 09:52:11) [GET]
+  Parameters: {"id"=>"53"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 53) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/53]
+
+
+Processing TipsController#index to xml (for 127.0.0.1 at 2009-11-24 10:35:30) [GET]
+  [4;36;1mTip Load (3.4ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Completed in 41ms (View: 32, DB: 3) | 200 OK [http://localhost/tips.xml]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:20:57) [GET]
+  [4;36;1mTip Load (3.8ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 85ms (View: 76, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:21:00) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:21:30) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"You Can't Write Perfect Software", "description"=>"Software can't be perfect. Protect your code and users from inevitable errors.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.6ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:21:30', 'You Can''t Write Perfect Software', 'Software can''t be perfect. Protect your code and users from inevitable errors.', 'The Pragmatic Programmer', '2009-11-24 23:21:30')[0m
+Redirected to http://localhost:3000/tips/54
+Completed in 72ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:21:30) [GET]
+  Parameters: {"id"=>"54"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 54) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/tips/54]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:21:31) [GET]
+  [4;35;1mTip Load (3.7ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 101ms (View: 92, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:21:36) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:22:04) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Design with Contracts", "description"=>"Use contracts to document and verify that code does no more and no less than it claims to do.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:22:04', 'Design with Contracts', 'Use contracts to document and verify that code does no more and no less than it claims to do.', 'The Pragmatic Programmer', '2009-11-24 23:22:04')[0m
+Redirected to http://localhost:3000/tips/55
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:22:04) [GET]
+  Parameters: {"id"=>"55"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 55) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/55]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:22:06) [GET]
+  [4;36;1mTip Load (3.8ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 42ms (View: 33, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:22:09) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:22:29) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Crash Early", "description"=>"A dead program normally does a lot less damage than a crippled one.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:22:29', 'Crash Early', 'A dead program normally does a lot less damage than a crippled one.', 'The Pragmatic Programmer', '2009-11-24 23:22:29')[0m
+Redirected to http://localhost:3000/tips/56
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:22:29) [GET]
+  Parameters: {"id"=>"56"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 56) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/56]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:22:31) [GET]
+  [4;35;1mTip Load (3.7ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 44ms (View: 35, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:22:34) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:23:12) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"User Assertions to Prevent the Impossible", "description"=>"Assertions validate your assumptions. Use them to protect your code from an uncertain world.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:23:12', 'User Assertions to Prevent the Impossible', 'Assertions validate your assumptions. Use them to protect your code from an uncertain world.', 'The Pragmatic Programmer', '2009-11-24 23:23:12')[0m
+Redirected to http://localhost:3000/tips/57
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:23:12) [GET]
+  Parameters: {"id"=>"57"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 57) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/57]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:23:14) [GET]
+  [4;36;1mTip Load (3.8ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 44ms (View: 35, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:23:17) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:24:03) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Use Exceptions for Exceptional Problems", "description"=>"Exceptions can suffer from all the readability and maintainability problems of classic spaghetti code. Reserve exceptions for exceptional things.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:24:03', 'Use Exceptions for Exceptional Problems', 'Exceptions can suffer from all the readability and maintainability problems of classic spaghetti code. Reserve exceptions for exceptional things.', 'The Pragmatic Programmer', '2009-11-24 23:24:03')[0m
+Redirected to http://localhost:3000/tips/58
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:24:03) [GET]
+  Parameters: {"id"=>"58"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 58) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/58]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:24:06) [GET]
+  [4;35;1mTip Load (3.7ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 43ms (View: 35, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:24:11) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:25:01) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Finish What You Start", "description"=>"Where possible, the routine or object that allocates a resource should be responsible for deallocating it.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:25:01', 'Finish What You Start', 'Where possible, the routine or object that allocates a resource should be responsible for deallocating it.', 'The Pragmatic Programmer', '2009-11-24 23:25:01')[0m
+Redirected to http://localhost:3000/tips/59
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:25:01) [GET]
+  Parameters: {"id"=>"59"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 59) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/59]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:25:03) [GET]
+  [4;36;1mTip Load (3.8ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 110ms (View: 101, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:25:05) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:25:28) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Minimize Coupling Between Modules", "description"=>"Avoid coupling by writing \"shy\" code and applying the Law of Demeter.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:25:28', 'Minimize Coupling Between Modules', 'Avoid coupling by writing "shy" code and applying the Law of Demeter.', 'The Pragmatic Programmer', '2009-11-24 23:25:28')[0m
+Redirected to http://localhost:3000/tips/60
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:25:28) [GET]
+  Parameters: {"id"=>"60"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 60) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/60]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:25:29) [GET]
+  [4;35;1mTip Load (4.0ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 46ms (View: 37, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:25:32) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:25:59) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Configure, Don't Integrate", "description"=>"Implement technology choices for an application as configuration options, not through integration or engineering.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:25:59', 'Configure, Don''t Integrate', 'Implement technology choices for an application as configuration options, not through integration or engineering.', 'The Pragmatic Programmer', '2009-11-24 23:25:59')[0m
+Redirected to http://localhost:3000/tips/61
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:25:59) [GET]
+  Parameters: {"id"=>"61"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 61) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/61]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:26:02) [GET]
+  [4;36;1mTip Load (4.0ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 45ms (View: 36, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:26:05) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:26:49) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Put Abstractions in Code, Details in Metadata", "description"=>"Program for the general case, and put the specifics outside the compiled code case.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:26:49', 'Put Abstractions in Code, Details in Metadata', 'Program for the general case, and put the specifics outside the compiled code case.', 'The Pragmatic Programmer', '2009-11-24 23:26:49')[0m
+Redirected to http://localhost:3000/tips/62
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:26:49) [GET]
+  Parameters: {"id"=>"62"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 62) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/62]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:27:06) [GET]
+  [4;35;1mTip Load (4.6ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 49ms (View: 38, DB: 5) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:27:08) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:27:45) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Analyze Workflow to Improve Concurrency", "description"=>"Exploit concurrency in your user's workflow.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:27:45', 'Analyze Workflow to Improve Concurrency', 'Exploit concurrency in your user''s workflow.', 'The Pragmatic Programmer', '2009-11-24 23:27:45')[0m
+Redirected to http://localhost:3000/tips/63
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:27:45) [GET]
+  Parameters: {"id"=>"63"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 63) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/63]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:27:47) [GET]
+  [4;36;1mTip Load (4.2ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 48ms (View: 39, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:27:49) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:28:23) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Design Using Services", "description"=>"Design in terms of SERVICES - independant, concurrent objects behind well-defined, consistent interfaces.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:28:23', 'Design Using Services', 'Design in terms of SERVICES - independant, concurrent objects behind well-defined, consistent interfaces.', 'The Pragmatic Programmer', '2009-11-24 23:28:23')[0m
+Redirected to http://localhost:3000/tips/64
+Completed in 12ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:28:23) [GET]
+  Parameters: {"id"=>"64"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 64) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 81ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/64]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:28:25) [GET]
+  [4;35;1mTip Load (4.3ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 50ms (View: 40, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:28:28) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:28:54) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Always Design for Concurrency", "description"=>"Allow for concurrency, and you'll design cleaner interfaces with fewer assumptions.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:28:54', 'Always Design for Concurrency', 'Allow for concurrency, and you''ll design cleaner interfaces with fewer assumptions.', 'The Pragmatic Programmer', '2009-11-24 23:28:54')[0m
+Redirected to http://localhost:3000/tips/65
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:28:54) [GET]
+  Parameters: {"id"=>"65"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 65) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/65]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:28:57) [GET]
+  [4;36;1mTip Load (4.0ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 48ms (View: 39, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:29:00) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:29:26) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Separate Views from Models", "description"=>"Gain flexibility at low cost by designing your application in terms of models and views.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:29:26', 'Separate Views from Models', 'Gain flexibility at low cost by designing your application in terms of models and views.', 'The Pragmatic Programmer', '2009-11-24 23:29:26')[0m
+Redirected to http://localhost:3000/tips/66
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:29:26) [GET]
+  Parameters: {"id"=>"66"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 66) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/66]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:29:28) [GET]
+  [4;35;1mTip Load (4.1ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 112ms (View: 103, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:29:30) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:30:19) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Use Blackboards to Coordinate Workflow", "description"=>"Use blackboards to coordinate disparate facts and agents, while maintaining independence and isolation among participants.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.4ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:30:19', 'Use Blackboards to Coordinate Workflow', 'Use blackboards to coordinate disparate facts and agents, while maintaining independence and isolation among participants.', 'The Pragmatic Programmer', '2009-11-24 23:30:19')[0m
+Redirected to http://localhost:3000/tips/67
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:30:19) [GET]
+  Parameters: {"id"=>"67"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 67) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/67]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:30:20) [GET]
+  [4;36;1mTip Load (4.3ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 51ms (View: 41, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:30:22) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:31:07) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Don't Program by Coincidence", "description"=>"Rely only on reliable things. Beware of accidental complexity, and don't confuse a happy coincidence with a purposeful plan.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.4ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:31:07', 'Don''t Program by Coincidence', 'Rely only on reliable things. Beware of accidental complexity, and don''t confuse a happy coincidence with a purposeful plan.', 'The Pragmatic Programmer', '2009-11-24 23:31:07')[0m
+Redirected to http://localhost:3000/tips/68
+Completed in 14ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:31:07) [GET]
+  Parameters: {"id"=>"68"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 68) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/68]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:31:09) [GET]
+  [4;35;1mTip Load (4.4ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 52ms (View: 42, DB: 4) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:31:13) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:31:42) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Estimate the Order of Your Algorithms", "description"=>"Get a feel for how long things are likely to take BEFORE you write code.", "book"=>"The Pragmatic Programmer"}}
+  [4;36;1mTip Create (0.5ms)[0m   [0;1mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:31:42', 'Estimate the Order of Your Algorithms', 'Get a feel for how long things are likely to take BEFORE you write code.', 'The Pragmatic Programmer', '2009-11-24 23:31:42')[0m
+Redirected to http://localhost:3000/tips/69
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:31:42) [GET]
+  Parameters: {"id"=>"69"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 69) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/69]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:31:44) [GET]
+  [4;36;1mTip Load (4.9ms)[0m   [0;1mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 51ms (View: 40, DB: 5) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#new (for 127.0.0.1 at 2009-11-24 18:31:47) [GET]
+Rendering template within layouts/tips
+Rendering tips/new
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/tips/new]
+
+
+Processing TipsController#create (for 127.0.0.1 at 2009-11-24 18:32:24) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"vGt0ipsrIYS6WN+fmkdGo0ngymu/8myANzy6V1d4AiE=", "tip"=>{"title"=>"Test Your Estimates", "description"=>"Mathematical analysis of algorithms doesn't tell you everything. Try timing your code in its target environment.", "book"=>"The Pragmatic Programmer"}}
+  [4;35;1mTip Create (0.5ms)[0m   [0mINSERT INTO "tips" ("updated_at", "title", "description", "book", "created_at") VALUES('2009-11-24 23:32:24', 'Test Your Estimates', 'Mathematical analysis of algorithms doesn''t tell you everything. Try timing your code in its target environment.', 'The Pragmatic Programmer', '2009-11-24 23:32:24')[0m
+Redirected to http://localhost:3000/tips/70
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:32:24) [GET]
+  Parameters: {"id"=>"70"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 70) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/70]
+
+
+Processing TipsController#index (for 127.0.0.1 at 2009-11-24 18:32:25) [GET]
+  [4;35;1mTip Load (4.6ms)[0m   [0mSELECT * FROM "tips" [0m
+Rendering template within layouts/tips
+Rendering tips/index
+Completed in 53ms (View: 43, DB: 5) | 200 OK [http://localhost/tips]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:32:29) [GET]
+  Parameters: {"id"=>"xml"}
+  [4;36;1mTip Load (0.1ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Tip with ID=xml):
+  app/controllers/tips_controller.rb:16:in `show'
+
+Rendered rescues/_trace (101.0ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing TipsController#index to xml (for 127.0.0.1 at 2009-11-24 18:32:33) [GET]
+  [4;35;1mTip Load (5.2ms)[0m   [0mSELECT * FROM "tips" [0m
+Completed in 135ms (View: 123, DB: 5) | 200 OK [http://localhost/tips.xml]
+
+
+Processing TipsController#show (for 127.0.0.1 at 2009-11-24 18:36:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTip Load (0.2ms)[0m   [0;1mSELECT * FROM "tips" WHERE ("tips"."id" = 1) [0m
+Rendering template within layouts/tips
+Rendering tips/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/1]
+
+
+Processing TipsController#show to xml (for 127.0.0.1 at 2009-11-24 18:36:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTip Load (0.2ms)[0m   [0mSELECT * FROM "tips" WHERE ("tips"."id" = 1) [0m
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/tips/1.xml]
