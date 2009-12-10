@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+NOTE: I'm looking to get permission from Addison Weasley
+for use of the tips before putting them in this file. So please
+don't waste your time adding them here until I've gotten
+that permission.
+-->
+<tips>
+  <tip>
+    <book>Foobar's Super Developer Tips</book>
+    <title>Keep It Simple, Stupid!</title>
+    <description>Simplify, and add lightness</description>
+  </tip>
+  <tip>
+    <book>Foobar's Super Developer Tips</book>
+    <title>Don't Repeat Yourself</title>
+    <description>A modification of any single element of a system should not change other logically-unrelated elements.</description>
+  </tip>
+</tips>
